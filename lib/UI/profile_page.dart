@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webapp_dropdown/UI/generate_card.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         focusNode: FocusNode(),
                         style: GoogleFonts.inter(
                           fontWeight: FontWeight.w700,
-                          fontSize: screen_height * 0.07,
+                          fontSize: screen_height * 0.05,
                         ),
                         cursorColor: Colors.blue,
                         backgroundCursorColor: Colors.blue,
@@ -95,18 +96,31 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           Expanded(child:
-          Column(
-            children: [
-               Container(
+          Padding(
+            padding:  EdgeInsets.only(top:screen_height*0.009,bottom:screen_height*0.009, ),
+            child: Column(
+              children: [
+                 Container(
+                   child: Center(
+                     child: Text('My Social Links',
+                     style: GoogleFonts.inter(
+                       fontWeight: FontWeight.w600,
+                       color: Color(0xFF000000),
+                       fontSize: screen_height * 0.025,
+                     ),),
+                   ),
     decoration: BoxDecoration(
       border: Border.all(
-          color: Color(0xFFEBEBEB)),
-    borderRadius: BorderRadius.circular(screen_width*0.002),
+        width: 2.5,
+            color: Color(0xFFEBEBEB)),
+    borderRadius: BorderRadius.circular(screen_width*0.006),
     ),
     height: screen_height*0.05,
     width: screen_width*0.4,
     ),
-            ],
+                Expanded(child: GenerateCard()),
+              ],
+            ),
           ),)
 
         ],

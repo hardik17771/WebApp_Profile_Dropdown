@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webapp_dropdown/UI/profile_page.dart';
 
+import 'UI/generate_card.dart';
+
 
 void main() {
   runApp(MyApp());

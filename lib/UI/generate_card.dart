@@ -39,7 +39,7 @@ class _GenerateCardState extends State<GenerateCard> {
       return CardType.Github;
     }
     else if (link.contains('twitter.com')) {
-      return CardType.Instagram;
+      return CardType.Twitter;
     }
     else if (link.contains('producthunt.com')) {
       return CardType.ProductHunt;
@@ -98,7 +98,7 @@ class _GenerateCardState extends State<GenerateCard> {
               width: screen_width*0.1,
             ),
           ),
-          ...selectedCards.map((cardType) => CustomCard(cardType: cardType)).toList(),
+          ...selectedCards.map((cardType) => CustomCard(cardType: cardType, link: link)).toList(),
         ],
       ),
     );

@@ -15,7 +15,6 @@ class _ProfilePageState extends State<ProfilePage> {
   TextEditingController bioController = TextEditingController();
   TextEditingController tagController = TextEditingController();
 
-
   @override
   void initState() {
     super.initState();
@@ -42,9 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    onTap: () {
-
-                    },
+                    onTap: () {},
                     child: Container(
                       height: screen_height * 0.4,
                       width: screen_width * 0.15,
@@ -95,34 +92,41 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
           ),
-          Expanded(child:
-          Padding(
-            padding:  EdgeInsets.only(top:screen_height*0.009,bottom:screen_height*0.009, ),
-            child: Column(
-              children: [
-                 Container(
-                   child: Center(
-                     child: Text('My Social Links',
-                     style: GoogleFonts.inter(
-                       fontWeight: FontWeight.w600,
-                       color: Color(0xFF000000),
-                       fontSize: screen_height * 0.025,
-                     ),),
-                   ),
-    decoration: BoxDecoration(
-      border: Border.all(
-        width: 2.5,
-            color: Color(0xFFEBEBEB)),
-    borderRadius: BorderRadius.circular(screen_width*0.006),
-    ),
-    height: screen_height*0.05,
-    width: screen_width*0.4,
-    ),
-                Expanded(child: GenerateCard()),
-              ],
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: screen_height * 0.009,
+                bottom: screen_height * 0.009,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    child: Center(
+                      child: Text(
+                        'My Social Links',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF000000),
+                          fontSize: screen_height * 0.025,
+                        ),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
+                      borderRadius: BorderRadius.circular(screen_width * 0.006),
+                    ),
+                    height: screen_height * 0.05,
+                    width: screen_width * 0.4,
+                  ),
+                  Expanded(
+                      child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: GenerateCard(),
+                  )),
+                ],
+              ),
             ),
-          ),)
-
+          )
         ],
       ),
     );

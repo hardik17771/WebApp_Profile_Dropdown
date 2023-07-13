@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'Profile Cards/Cards_UI_Data.dart';
 
 class GenerateCard extends StatefulWidget {
-  const GenerateCard({Key? key}) : super(key: key);
+  const  GenerateCard({Key? key}) : super(key: key);
 
   @override
   State<GenerateCard> createState() => _GenerateCardState();
@@ -55,6 +55,8 @@ class _GenerateCardState extends State<GenerateCard> {
     double screen_width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Wrap(
+        alignment: WrapAlignment.start,
+        runSpacing: 8,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -212,7 +214,16 @@ class _GenerateCardState extends State<GenerateCard> {
                   ],
                 ),
           ),
-          ...selectedCards.map((cardType) => CustomCard(cardType: cardType, link: link)).toList(),
+          ...selectedCards
+              .map(
+                (cardType) => CustomCard(
+              cardType: cardType,
+              link: link,
+              cardWidth: screen_width*0.25,
+              cardHeight: screen_height*0.19 ,
+            ),
+          )
+              .toList(),
         ],
       ),
     );

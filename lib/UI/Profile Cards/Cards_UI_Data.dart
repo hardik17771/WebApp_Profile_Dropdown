@@ -299,8 +299,16 @@ enum CardType {
 class CustomCard extends StatefulWidget {
   final CardType cardType;
   final String link;
+  final double cardWidth;
+  final double cardHeight;
 
-  const CustomCard({Key? key, required this.cardType, required this.link}) : super(key: key);
+  const CustomCard({
+    Key? key,
+    required this.cardType,
+    required this.link,
+    required this.cardWidth,
+    required this.cardHeight,
+  }) : super(key: key);
 
   @override
   State<CustomCard> createState() => _CustomCardState();
@@ -321,10 +329,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 100,
-            width: 100,
+            height: widget.cardHeight ,
+            width: widget.cardWidth*0.4257,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -335,14 +343,14 @@ class _CustomCardState extends State<CustomCard> {
                     widget.link,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.02,
                     ),
                   ),
                   Text(
                     'github.com',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w300,
-                      fontSize: 10.0,
+                      fontSize: widget.cardHeight * 0.015,
                     ),
                   ),
                 ],
@@ -360,10 +368,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 50,
-            width: 200,
+            height: widget.cardHeight,
+            width: widget.cardWidth*0.4257,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -374,7 +382,7 @@ class _CustomCardState extends State<CustomCard> {
                     widget.link,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.02,
                     ),
                   ),
                 ],
@@ -392,10 +400,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 150,
-            width: 150,
+            height:widget.cardHeight,
+            width: widget.cardWidth*0.4257,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -406,14 +414,14 @@ class _CustomCardState extends State<CustomCard> {
                     'Lets connect!',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.02,
                     ),
                   ),
                   Text(
                     'linkedin.com',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w300,
-                      fontSize: 10.0,
+                      fontSize: widget.cardHeight * 0.015,
                     ),
                   ),
                 ],
@@ -431,11 +439,11 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
-              color: Colors.blue,
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 50,
-            width: 200,
+            height: widget.cardHeight,
+            width: widget.cardWidth*0.4257,
+            color: Colors.blue,
             margin: EdgeInsets.all(8.0),
             child: Center(
               child: Text(
@@ -455,10 +463,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xffD61696),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 100,
-            width: 100,
+            height:widget.cardHeight,
+            width: widget.cardWidth*0.4257,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -474,7 +482,7 @@ class _CustomCardState extends State<CustomCard> {
                     style: GoogleFonts.inter(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.02,
                     ),
                   ),
                   Text(
@@ -482,7 +490,7 @@ class _CustomCardState extends State<CustomCard> {
                     style: GoogleFonts.inter(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
-                      fontSize: 10.0,
+                      fontSize: widget.cardHeight * 0.015,
                     ),
                   ),
                 ],
@@ -500,10 +508,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xff1DA1F2)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 100,
-            width: 100,
+            height:widget.cardHeight,
+            width: widget.cardWidth*0.4257,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(3.0),
@@ -514,19 +522,19 @@ class _CustomCardState extends State<CustomCard> {
                     'Lets connect!',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.02,
                     ),
                   ),
                   Text(
                     '@imeronn',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w300,
-                      fontSize: 10.0,
+                      fontSize: widget.cardHeight * 0.015,
                     ),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
                     ),
                     child: ElevatedButton(
                       onPressed: () {},
@@ -535,7 +543,7 @@ class _CustomCardState extends State<CustomCard> {
                         style: GoogleFonts.inter(
                           color: Colors.white,
                           fontWeight: FontWeight.w400,
-                          fontSize: 10.0,
+                          fontSize: widget.cardHeight * 0.01,
                         ),
                       ),
                     ),
@@ -555,10 +563,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 100,
-            width: 100,
+            height:widget.cardHeight,
+            width: widget.cardWidth*0.4257,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(3.0),
@@ -569,13 +577,13 @@ class _CustomCardState extends State<CustomCard> {
                     '@imeronn',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 10.0,
+                      fontSize: widget.cardHeight * 0.015,
                     ),
                   ),
                   Container(
                     decoration: BoxDecoration(
                       color: Color(0xff1DB1EC),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
                     ),
                     child: ElevatedButton(
                       onPressed: () {},
@@ -584,7 +592,7 @@ class _CustomCardState extends State<CustomCard> {
                         style: GoogleFonts.inter(
                           color: Colors.white,
                           fontWeight: FontWeight.w400,
-                          fontSize: 10.0,
+                          fontSize: widget.cardHeight * 0.01,
                         ),
                       ),
                     ),
@@ -611,10 +619,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 200,
-            width: 200,
+            height: widget.cardHeight,
+            width: widget.cardWidth*0.9,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -625,14 +633,14 @@ class _CustomCardState extends State<CustomCard> {
                     widget.link,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 24.0,
+                      fontSize: widget.cardHeight * 0.024,
                     ),
                   ),
                   Text(
                     'github.com',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.016,
                     ),
                   ),
                   // Additional widgets for expanded view
@@ -651,10 +659,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 100,
-            width: 400,
+            height: widget.cardHeight ,
+            width: widget.cardWidth * 0.9,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -665,7 +673,7 @@ class _CustomCardState extends State<CustomCard> {
                     widget.link,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 24.0,
+                      fontSize: widget.cardHeight * 0.024,
                     ),
                   ),
                   // Additional widgets for expanded view
@@ -684,10 +692,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 200,
-            width: 200,
+            height: widget.cardHeight ,
+            width: widget.cardWidth * 0.9,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -698,14 +706,14 @@ class _CustomCardState extends State<CustomCard> {
                     'Lets connect!',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 24.0,
+                      fontSize: widget.cardHeight * 0.024,
                     ),
                   ),
                   Text(
                     'linkedin.com',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.016,
                     ),
                   ),
                   // Additional widgets for expanded view
@@ -724,11 +732,11 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
               color: Colors.blue,
             ),
-            height: 100,
-            width: 400,
+            height: widget.cardHeight ,
+            width: widget.cardWidth * 0.9,
             margin: EdgeInsets.all(8.0),
             child: Center(
               child: Text(
@@ -748,10 +756,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xffD61696),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 200,
-            width: 200,
+            height: widget.cardHeight ,
+            width: widget.cardWidth * 0.9,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -760,14 +768,14 @@ class _CustomCardState extends State<CustomCard> {
                 children: [
                   SvgPicture.asset(
                     'images/dribble.svg',
-                    height: 50,
+                    height: widget.cardHeight
                   ),
                   Text(
                     'Dribble',
                     style: GoogleFonts.inter(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
-                      fontSize: 24.0,
+                      fontSize: widget.cardHeight * 0.024,
                     ),
                   ),
                   Text(
@@ -775,7 +783,7 @@ class _CustomCardState extends State<CustomCard> {
                     style: GoogleFonts.inter(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.016,
                     ),
                   ),
                   // Additional widgets for expanded view
@@ -794,10 +802,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xff1DA1F2)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 200,
-            width: 200,
+            height: widget.cardHeight,
+            width: widget.cardWidth*0.9,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(3.0),
@@ -808,19 +816,19 @@ class _CustomCardState extends State<CustomCard> {
                     'Lets connect!',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 24.0,
+                      fontSize: widget.cardHeight * 0.024,
                     ),
                   ),
                   Text(
                     '@imeronn',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.016,
                     ),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
                     ),
                     child: ElevatedButton(
                       onPressed: () {},
@@ -829,7 +837,7 @@ class _CustomCardState extends State<CustomCard> {
                         style: GoogleFonts.inter(
                           color: Colors.white,
                           fontWeight: FontWeight.w400,
-                          fontSize: 16.0,
+                          fontSize: widget.cardHeight * 0.016,
                         ),
                       ),
                     ),
@@ -850,10 +858,10 @@ class _CustomCardState extends State<CustomCard> {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: Color(0xFFEBEBEB)),
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
             ),
-            height: 200,
-            width: 200,
+            height: widget.cardHeight,
+            width: widget.cardWidth*0.9,
             margin: EdgeInsets.all(8.0),
             child: Padding(
               padding: const EdgeInsets.all(3.0),
@@ -864,13 +872,13 @@ class _CustomCardState extends State<CustomCard> {
                     '@imeronn',
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16.0,
+                      fontSize: widget.cardHeight * 0.016,
                     ),
                   ),
                   Container(
                     decoration: BoxDecoration(
                       color: Color(0xff1DB1EC),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(widget.cardWidth * 0.006),
                     ),
                     child: ElevatedButton(
                       onPressed: () {},
@@ -879,7 +887,7 @@ class _CustomCardState extends State<CustomCard> {
                         style: GoogleFonts.inter(
                           color: Colors.white,
                           fontWeight: FontWeight.w400,
-                          fontSize: 16.0,
+                          fontSize: widget.cardHeight * 0.016,
                         ),
                       ),
                     ),
@@ -905,3 +913,5 @@ class _CustomCardState extends State<CustomCard> {
     );
   }
 }
+
+
